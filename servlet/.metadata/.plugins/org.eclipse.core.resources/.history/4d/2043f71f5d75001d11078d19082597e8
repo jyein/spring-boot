@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+	<input type="text" class="address1">
+	<!-- 부산광역시 -->
+	<input type="text" class="address2">
+	<!-- 동래구 -->
+	<input type="text" class="address3">
+	<!-- 중앙대로 1285길 -->
+	<button type="button" class="submit-button">전송</button>
+	<!-- /ajax2 , /api/ajax2,  post 요청 -->
+	<script type="text/javascript">
+	
+	const submitButton = document.querySelector(".submit-button");
+	
+		submitButton.onclick = () => {
+			/* const address1 = document.querySelector/* (".address1");
+			const address2 = document.querySelector(".address2");
+			const address3 = document.querySelector(".address3"); */ 
+			const address = document.querySelector(".address1 + .address2 + .address3"); 
+		
+			let userAddress = {
+				/* address1: null,
+				address2: null,
+				address3: null */
+				address : null;
+			}
+		
+		userAddress.address1 = address1.value;
+		userAddress.address2 = address2.value;
+		userAddress.address3 = address3.value; 
+		
+			let addressDate = {
+					async : false,
+					type: "get",
+					url: "/api/ajax2",
+					data: userAddress,
+					dataType: "text",
+					success : response => {
+						alert("요청 성공!");
+					},
+					error: response => {
+						alert("요청 요류!")
+					}
+					
+			};
+				$.ajax(userAddress);
+		};
+		
+	</script>
+</body>
+</html>

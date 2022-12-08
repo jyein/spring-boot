@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" class="address1"> <!-- 부산광역시 -->
+	<input type="text" class="address2"> <!-- 동래구 -->
+	<input type="text" class="address3"> <!-- 중앙대로 1285길 -->
+	<button type="button" class="submit-button">전송</button>
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

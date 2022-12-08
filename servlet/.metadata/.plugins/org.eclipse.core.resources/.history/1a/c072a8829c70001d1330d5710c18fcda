@@ -1,0 +1,13 @@
+package com.study.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+// ctrl + shift + o = 안쓰거나 필요한 import 정리
+
+@WebServlet("/RequestPrams1")
+public class RequestPrams1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+
+}

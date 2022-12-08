@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table {
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 400px;
+	}
+</style>
+</head>
+<body>
+	<form action="/auth/login">
+		<div>
+			<input type="text" name="username" placeholder="사용자이름">
+		</div>
+		<div>
+			<input type="password" name="password" placeholder="비밀번호">
+		</div>
+	</form>
+</body>
+</html>

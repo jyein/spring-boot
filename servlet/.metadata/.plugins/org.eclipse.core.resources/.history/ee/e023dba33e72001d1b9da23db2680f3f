@@ -1,0 +1,33 @@
+package com.study.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.study.domain.User;
+import com.study.repository.UserRepository;
+
+public class AccountService { // 싱글톤
+	
+	private static AccountService instance = null;
+
+	private AccountService() {}
+
+	public static AccountService getInstance() {
+		if (instance == null) {
+			instance = new AccountService();
+		}
+		return instance;
+	}
+	
+	
+	
+	public boolean isDuplicateUsername(String username) { // username 중복확인
+		User user = UserRepository.getInstance().findUserByUsername(username);
+		return user != null; // null이면 중복됫다는 뜻으로 false를 출력
+	}
+	
+	public void register(User user) {
+		UserRepository.getInstance().saveUser(user);
+	}
+	
+}

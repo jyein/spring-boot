@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" class="address1">
+	<input type="text" class="address2">
+	<input type="text" class="address3">
+	<button type="button" class="submit-button">전송</button>
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

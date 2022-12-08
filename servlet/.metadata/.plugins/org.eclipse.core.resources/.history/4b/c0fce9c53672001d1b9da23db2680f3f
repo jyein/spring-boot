@@ -1,0 +1,15 @@
+package com.study.service;
+
+import com.study.domain.User;
+import com.study.repository.UserRepository;
+
+public class AccountService {
+
+	public boolean isDuplicateUsername(String username) { // username 중복확인
+		User user = UserRepository.getInstance().findUserByUsername(username);
+		return user != null; // null이면 중복됫다는 뜻으로 false를 출력
+	}
+	
+	
+	
+}

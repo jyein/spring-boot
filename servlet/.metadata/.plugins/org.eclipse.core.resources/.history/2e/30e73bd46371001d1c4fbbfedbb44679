@@ -1,0 +1,40 @@
+package com.study.fliter;
+
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpFilter;
+
+/**
+ * Servlet Filter implementation class Filter1
+ */
+@WebFilter("/*")
+public class Filter1 extends HttpFilter implements Filter {
+       
+   
+    public Filter1() {
+        super();
+        
+    }
+
+	public void destroy() { // 한번만 호출
+		
+	}
+
+	
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		System.out.println("필터 1 실행됨!!!");
+		chain.doFilter(request, response);
+	}
+
+	
+	public void init(FilterConfig fConfig) throws ServletException { // 한번만 호출
+		
+	}
+
+}
