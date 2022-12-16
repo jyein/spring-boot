@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot202210Hseonguk.repository.UserRepository">
+    <!--
+     id = 메소드명 UserRepository에 있는 메소드명이 같아야한다
+     parameterType = 데이터타입 (경로(파라미터 자체가 객체이다))
+    -->
+    <insert id="saveUser" parameterType="com.study.springboot202210Hseonguk.web.dto.UserDto">
+        insert into user_mst
+        values(0, #{username}, #{password}, #{name}, #{email})
+        <!--
+         UserDto에 들어있는 메소드를 #{}안에 적어준다
+         이렇게 표현식을 가져올려면 UserDto에 getter가 있어야 한다.
+        -->
+    </insert>
+
+    <select id="findUserByUserId" parameterType="integer" resultType="com.study.springboot202210Hseonguk.web.dto.UserDto">
+        select
+            user_id as userId,
+            username,
+            password,
+            name,
+            email
+        from
+            user_mst
+        where
+            user_id = #{userId}
+    </select>
+</mapper>
